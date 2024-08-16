@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app_ui/pages/colors.dart';
-import 'package:plant_app_ui/widgets/boldable_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,14 +22,63 @@ class HomePage extends StatelessWidget {
                       color: MainColor,
                     )),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Image.asset("assets/icons/menu.png"),
                 ),
-                SizedBox(
-                  height: 70,
+                Padding(
+                  padding: EdgeInsets.only(right: 20, top: 60, left: 20),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Hi Uishopy!",
+                        style: new TextStyle(
+                          fontSize: 30.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Spacer(),
+                      Image.asset("assets/image/logo.png"),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: [BoldableText("Hi Uishopy!"),],
+                Padding(
+                  padding: EdgeInsets.only(top: 270, left: 20, right: 20),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                 //     decoration: BoxDecoration(),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 300,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  label: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 25, top: 10),
+                                    child: Text(
+                                      "Search",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: MainColor.withOpacity(0.5)),
+                                    ),
+                                  ),
+                                  border: InputBorder.none),
+                            ),
+                          ),
+                          Container(
+                              height: 70,
+                              width: 70,
+                              child: Image.asset("assets/icons/search.png")),
+                        ],
+                      ),
+                      width: double.maxFinite,
+                      height: 60,
+                      color: Colors.white,
+                    ),
+                  ),
                 )
               ],
             )
